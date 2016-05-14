@@ -10,8 +10,6 @@
 
 [Dd]ebug/
 [Rr]elease/
-x64/
-x86/
 build/
 [Bb]in/
 [Oo]bj/
@@ -30,7 +28,6 @@ tessdata/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-*.dll
 *_i.c
 *_p.c
 *.ilk
