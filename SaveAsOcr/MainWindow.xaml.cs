@@ -99,7 +99,7 @@ namespace SaveAsOcr
                 case System.Windows.Forms.DialogResult.OK:
                     return folderDialog.SelectedPath;
                 default:
-                    return null;
+                    return String.Empty;
             }
         }
     }

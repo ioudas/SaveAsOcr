@@ -100,7 +100,7 @@ namespace SaveAsOcr
 
         private string GetTargetFileName(string fileContents, Regex matchRegex, string replaceRegex)
         {
-            log.Info("File contents: \n {0} \n End of file contents", fileContents);
+            log.Debug("File contents: \n {0} \n End of file contents", fileContents);
             Match match = matchRegex.Match(fileContents);
             if (match.Success)
             {
