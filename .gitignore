@@ -15,6 +15,7 @@ x86/
 build/
 [Bb]in/
 [Oo]bj/
+tessdata/
 
 # NuGet Packages
 *.nupkg
