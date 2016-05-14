@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveAsOcr"
         mc:Ignorable="d"
-        Title="SaveAsOcr" Height="148.426" Width="521.111">
+        Title="SaveAsOcr" Height="244.426" Width="782.111">
     <Grid Margin="0,0,2,5">
-        <TextBox x:Name="txtInputDir" HorizontalAlignment="Left" Height="23" Margin="116,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtInputDir" HorizontalAlignment="Left" Height="23" Margin="116,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
         <Label x:Name="label" Content="Input directory:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Match regex:" HorizontalAlignment="Left" Margin="304,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Replace regex:" HorizontalAlignment="Left" Margin="295,45,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtOutputDir" HorizontalAlignment="Left" Height="22" Margin="116,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtMatchRegex" HorizontalAlignment="Left" Height="23" Margin="387,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="214,84,0,0" VerticalAlignment="Top" Width="75" Click="btnStart_Click"/>
-        <TextBox x:Name="txtReplaceRegex" HorizontalAlignment="Left" Height="23" Margin="387,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy" Content="Match regex:" HorizontalAlignment="Left" Margin="395,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Replace regex:" HorizontalAlignment="Left" Margin="395,51,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtOutputDir" HorizontalAlignment="Left" Height="22" Margin="116,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="212"/>
+        <TextBox x:Name="txtMatchRegex" HorizontalAlignment="Left" Height="23" Margin="487,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="275"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="355,94,0,0" VerticalAlignment="Top" Width="75" Click="btnStart_Click"/>
+        <TextBox x:Name="txtReplaceRegex" HorizontalAlignment="Left" Height="23" Margin="487,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="275"/>
         <Label x:Name="label_Copy2" Content="Output directory:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btwBrowseInputDir" HorizontalAlignment="Left" Margin="242,13,0,0" VerticalAlignment="Top" Width="48" Height="23" Content="Browse"/>
-        <Button x:Name="btnBrowseOutputDir" HorizontalAlignment="Left" Margin="242,46,0,0" VerticalAlignment="Top" Width="48" Height="23" Content="Browse"/>
+        <Button x:Name="btwBrowseInputDir" HorizontalAlignment="Left" Margin="333,13,0,0" VerticalAlignment="Top" Width="48" Height="23" Content="Browse" Click="btwBrowseInputDir_Click"/>
+        <Button x:Name="btnBrowseOutputDir" HorizontalAlignment="Left" Margin="333,54,0,0" VerticalAlignment="Top" Width="48" Height="23" Content="Browse" Click="btnBrowseOutputDir_Click"/>
+        <TextBlock x:Name="txtLogOutput" HorizontalAlignment="Left" Margin="10,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="752"/>
 
     </Grid>
 </Window>

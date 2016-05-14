@@ -22,5 +22,53 @@ namespace SaveAsOcr.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string InputFileDir {
+            get {
+                return ((string)(this["InputFileDir"]));
+            }
+            set {
+                this["InputFileDir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OutputFileDir {
+            get {
+                return ((string)(this["OutputFileDir"]));
+            }
+            set {
+                this["OutputFileDir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MatchRegex {
+            get {
+                return ((string)(this["MatchRegex"]));
+            }
+            set {
+                this["MatchRegex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ReplaceRegex {
+            get {
+                return ((string)(this["ReplaceRegex"]));
+            }
+            set {
+                this["ReplaceRegex"] = value;
+            }
+        }
     }
 }
