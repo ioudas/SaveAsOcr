@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using Ghostscript.NET;
 using Ghostscript.NET.Rasterizer;
 using NLog;
 using SaveAsOcr;
@@ -14,6 +16,9 @@ namespace OcrEngine
 
         public IEnumerable<Stream> RasterizePdf(string pathToPdf)
         {
+            string gsDir = Environment.Is64BitProcess ? @"x64\" : @"x86\";
+            var gsi = new GhostscriptVersionInfo(Path.Combine(Directory.GetCurrentDirectory(), gsDir, "gsdll.dll"));
+
             var xDpi = 256;
             var yDpi = 256;
 
@@ -23,7 +28,7 @@ namespace OcrEngine
                 var buffer = File.ReadAllBytes(pathToPdf);
                 var ms = new MemoryStream(buffer);
 
-                rasterizer.Open(ms);
+                rasterizer.Open(ms, gsi, true);
 
                 for (var pageNumber = 1; pageNumber <= rasterizer.PageCount; pageNumber++)
                 {
