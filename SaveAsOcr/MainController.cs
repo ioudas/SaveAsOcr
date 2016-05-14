@@ -76,18 +76,26 @@ namespace SaveAsOcr
 
         private string GetFileContents(string path)
         {
+            Stream bitmapStream;
             if (Path.GetExtension(path).Equals(".pdf", StringComparison.InvariantCultureIgnoreCase))
             {
-                log.Info("File '{0}' is PDF, converting to bitmap", path);
-                IEnumerable<Stream> rasterizedPdfs = pdfConverter.RasterizePdf(path);
-                var combinedStream = new CombinedStream(rasterizedPdfs);
-                return ocrReader.GetTextFromImage(combinedStream);
+                bitmapStream = ConvertFromPdf(path);
+            }
+            else
+            {
+                bitmapStream = new FileStream(path, FileMode.Open);
             }
 
-            using (FileStream stream = new FileStream(path, FileMode.Open))
-            {
-                return ocrReader.GetTextFromImage(stream);
-            }
+            return ocrReader.GetTextFromImage(bitmapStream);
+        }
+
+        private CombinedStream ConvertFromPdf(string path)
+        {
+            log.Info("File '{0}' is PDF, converting to bitmap", path);
+            IEnumerable<Stream> rasterizedPdfs = pdfConverter.RasterizePdf(path);
+            var combinedStream = new CombinedStream(rasterizedPdfs);
+
+            return combinedStream;
         }
 
         private string GetTargetFileName(string fileContents, Regex matchRegex, string replaceRegex)

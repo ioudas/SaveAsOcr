@@ -14,8 +14,8 @@ namespace OcrEngine
 
         public IEnumerable<Stream> RasterizePdf(string pathToPdf)
         {
-            var xDpi = 96;
-            var yDpi = 96;
+            var xDpi = 256;
+            var yDpi = 256;
 
             log.Info("Raterizing PDF '{0}'", pathToPdf);
             using (var rasterizer = new GhostscriptRasterizer())
@@ -28,8 +28,10 @@ namespace OcrEngine
                 for (var pageNumber = 1; pageNumber <= rasterizer.PageCount; pageNumber++)
                 {
                     log.Info("Raterizing PDF page number: {0}", pageNumber);
+                    Image bitmap = rasterizer.GetPage(xDpi, yDpi, pageNumber);
+//                    bitmap.Save(@"C:\git\testdata\out\bitmap.bmp", ImageFormat.Bmp);
 
-                    yield return rasterizer.GetPage(xDpi, yDpi, pageNumber).ToStream(ImageFormat.Bmp);
+                    yield return bitmap.ToStream(ImageFormat.Bmp);
                 }
             }
         }
