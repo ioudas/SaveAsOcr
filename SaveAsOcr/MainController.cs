@@ -59,7 +59,7 @@ namespace SaveAsOcr
                 }
                 catch (Exception e)
                 {
-                    log.Error(String.Format("Error while processing file '{0}'", path), e);
+                    log.Error(e, "Error while processing file '{0}'", path);
                     return new SaveResult(SaveResultStatus.FAILURE, String.Format("Failed to read file '{0}'. Error: '{1}'", path, e.Message));
                 }
             }

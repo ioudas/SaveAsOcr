@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("SaveAsOcr")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ioudas.net")]
 [assembly: AssemblyProduct("SaveAsOcr")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
