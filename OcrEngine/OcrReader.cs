@@ -11,8 +11,9 @@ namespace OcrEngine
 
         public string GetTextFromImage(Stream inputStream)
         {
-            log.Info("Initializing Tesseract engine.");
-            using (var engine = new TesseractEngine("tessdata", "eng", EngineMode.Default))
+            string tessdataDir = Path.Combine(Directory.GetCurrentDirectory(), @"tessdata\");
+            log.Info("Initializing Tesseract engine. Tessdata directory: '{0}'", tessdataDir);
+            using (var engine = new TesseractEngine(tessdataDir, "eng", EngineMode.Default))
             {
                 log.Info("Processing image stream.");
                 // have to load Pix via a bitmap since Pix doesn't support loading a stream.
