@@ -17,7 +17,9 @@ namespace OcrEngine
         public IEnumerable<Stream> RasterizePdf(string pathToPdf)
         {
             string gsDir = Environment.Is64BitProcess ? @"x64\" : @"x86\";
-            var gsi = new GhostscriptVersionInfo(Path.Combine(Directory.GetCurrentDirectory(), gsDir, "gsdll.dll"));
+            string gsDllPath = Path.Combine(Directory.GetCurrentDirectory(), gsDir, "gsdll.dll");
+            log.Info("Loading GhostScript native DLL from '{0}'", gsDllPath);
+            var gsi = new GhostscriptVersionInfo(gsDllPath);
 
             var xDpi = 256;
             var yDpi = 256;
